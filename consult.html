@@ -1,0 +1,320 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KORA Healthcare Consultation</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+}
+
+/* NAVBAR */
+
+.navbar{
+    background:#0d3b66;
+    padding:15px 40px;
+}
+
+.navbar ul{
+    display:flex;
+    justify-content:center;
+    list-style:none;
+    gap:30px;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(135deg,#0d3b66,#1d70b8);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:1.1rem;
+    opacity:0.9;
+}
+
+/* GRID */
+
+.container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+    margin:50px 0;
+}
+
+/* CARD */
+
+.card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    color:#0d3b66;
+    margin-bottom:6px;
+}
+
+.speciality{
+    display:inline-block;
+    background:#eaf4ff;
+    color:#0d3b66;
+    padding:5px 12px;
+    border-radius:30px;
+    font-size:14px;
+    margin-bottom:12px;
+}
+
+.rating{
+    color:#f4b400;
+    margin-bottom:10px;
+}
+
+.info{
+    color:#666;
+    margin-bottom:15px;
+    font-size:14px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-top:8px;
+    margin-bottom:12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#0d3b66;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+}
+
+button:hover{
+    background:#14528f;
+}
+
+/* NOTIFICATION */
+
+.notification{
+    max-width:800px;
+    margin:30px auto;
+    padding:18px;
+    text-align:center;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    font-weight:600;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<ul>
+<li><a href="index.html">🏠 Home</a></li>
+<li><a href="cultures.html">🌏 Cultures</a></li>
+<li><a href="ayurveda.html">🌿 Ayurveda</a></li>
+<li><a href="massager.html">🦵 Knee Therapy</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<h1>👨‍⚕️ KORA Healthcare Consultation</h1>
+<p>Connect with experienced specialists and schedule your appointment instantly.</p>
+</section>
+
+<div class="container">
+
+<div class="grid">
+
+<!-- Doctor 1 -->
+<div class="card">
+<img src="images/doctors/doctor1.jpg">
+<div class="card-content">
+<h3>Dr. Meera Sharma</h3>
+<div class="speciality">Ayurvedic Specialist</div>
+<div class="rating">⭐⭐⭐⭐⭐ 4.9</div>
+<p class="info">12 Years Experience</p>
+
+<input type="email" id="email1" placeholder="Email Address">
+<input type="date" id="date1">
+<input type="time" id="time1">
+
+<button onclick="bookAppointment('Dr. Meera Sharma','email1','date1','time1')">
+Book Appointment
+</button>
+</div>
+</div>
+
+<!-- Doctor 2 -->
+<div class="card">
+<img src="images/doctors/doctor2.jpg">
+<div class="card-content">
+<h3>Dr. Arjun Nair</h3>
+<div class="speciality">Pain Management</div>
+<div class="rating">⭐⭐⭐⭐⭐ 4.8</div>
+<p class="info">10 Years Experience</p>
+
+<input type="email" id="email2" placeholder="Email Address">
+<input type="date" id="date2">
+<input type="time" id="time2">
+
+<button onclick="bookAppointment('Dr. Arjun Nair','email2','date2','time2')">
+Book Appointment
+</button>
+</div>
+</div>
+
+<!-- Doctor 3 -->
+<div class="card">
+<img src="images/doctors/doctor3.jpg">
+<div class="card-content">
+<h3>Dr. Kavya Rao</h3>
+<div class="speciality">Herbal Medicine</div>
+<div class="rating">⭐⭐⭐⭐⭐ 4.9</div>
+<p class="info">14 Years Experience</p>
+
+<input type="email" id="email3" placeholder="Email Address">
+<input type="date" id="date3">
+<input type="time" id="time3">
+
+<button onclick="bookAppointment('Dr. Kavya Rao','email3','date3','time3')">
+Book Appointment
+</button>
+</div>
+</div>
+
+<!-- Doctor 4 -->
+<div class="card">
+<img src="images/doctors/doctor4.jpg">
+<div class="card-content">
+<h3>Dr. Vikram Patel</h3>
+<div class="speciality">Senior Wellness Expert</div>
+<div class="rating">⭐⭐⭐⭐⭐ 4.7</div>
+<p class="info">15 Years Experience</p>
+
+<input type="email" id="email4" placeholder="Email Address">
+<input type="date" id="date4">
+<input type="time" id="time4">
+
+<button onclick="bookAppointment('Dr. Vikram Patel','email4','date4','time4')">
+Book Appointment
+</button>
+</div>
+</div>
+
+</div>
+
+<div class="notification" id="notification">
+No appointment booked yet.
+</div>
+
+</div>
+
+<script>
+
+const today = new Date().toISOString().split("T")[0];
+
+document.querySelectorAll("input[type='date']").forEach(input=>{
+    input.min=today;
+});
+
+function bookAppointment(doctor,emailId,dateId,timeId){
+
+    const email=document.getElementById(emailId).value;
+    const date=document.getElementById(dateId).value;
+    const time=document.getElementById(timeId).value;
+
+    if(!email || !date || !time){
+        document.getElementById("notification").innerText =
+        "⚠️ Please complete all fields.";
+        return;
+    }
+
+    document.getElementById("notification").innerText =
+    "⏳ Booking your appointment...";
+
+    fetch("http://localhost:5000/book",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+            doctor,
+            email,
+            date,
+            time
+        })
+    })
+    .then(res=>res.text())
+    .then(data=>{
+        document.getElementById("notification").innerText=data;
+    })
+    .catch(()=>{
+        document.getElementById("notification").innerText=
+        "❌ Unable to connect to booking server.";
+    });
+}
+
+</script>
+
+</body>
+</html>
+```
