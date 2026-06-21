@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KORA Intro</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Override for intro page */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #e0f2e9, #f5f5f5); /* grey + green tint */
+      color: #222;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .intro-container {
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .intro-container h1 {
+      font-size: 3rem;
+      color: #2e7d32; /* deep green */
+    }
+    .intro-container p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      color: #444;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 1.6rem;
+      background: #2e7d32;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background: #1b5e20;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <div class="intro-container">
+    <h1> Welcome to KORA </h1>
+    <p>Explore Cultures • Discover Ayurveda • Experience Innovation</p>
+    <a href="home.html" class="btn">Enter Website</a>
+  </div>
+</body>
+</html>

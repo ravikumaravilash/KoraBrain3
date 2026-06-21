@@ -1,0 +1,29 @@
+{
+  "name": "korabrain",
+  "version": "1.0.0",
+  "description": "KORA - AI-powered cultural operating system",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Ravikumar",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.22.2",
+    "node-fetch": "^2.6.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravikumaravilash/KoraBrain3.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ravikumaravilash/KoraBrain3/issues"
+  },
+  "homepage": "https://github.com/ravikumaravilash/KoraBrain3#readme"
+}

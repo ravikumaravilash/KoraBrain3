@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Culture Detail</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .culture-header {
+      background: linear-gradient(135deg, #4a90e2, #9013fe);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .accordion-btn {
+      background: #4a90e2;
+      color: white;
+      cursor: pointer;
+      padding: 1rem;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      transition: background 0.3s;
+    }
+
+    .accordion-btn:hover {
+      background: #357ab8;
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .recipe {
+      margin-bottom: 1rem;
+    }
+
+    .recipe h4 {
+      margin: 0.5rem 0;
+      color: #9013fe;
+    }
+
+    .back-btn {
+      background: #9013fe;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin: 2rem auto;
+      display: block;
+    }
+
+    .back-btn:hover {
+      background: #6d0fbf;
+    }
+  </style>
+</head>
+<body>
+  <header class="culture-header">
+    <h1 id="culture-title">Culture Detail</h1>
+  </header>
+
+  <main style="padding:2rem;">
+    <div id="culture-detail"></div>
+  </main>
+
+  <footer>
+    <button onclick="window.location.href='cultures.html'" class="back-btn">← Back to Explore Cultures</button>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
+
+    fetch("cultures.json")
+      .then(res => res.json())
+      .then(data => {
+        const culture = data.find(c => c.name.toLowerCase() === name.toLowerCase());
+        const container = document.getElementById("culture-detail");
+        const title = document.getElementById("culture-title");
+
+        if (culture) {
+          title.textContent = culture.name;
+
+          // Build accordion sections dynamically
+          container.innerHTML = `
+            ${culture.image ? `<img src="images/cultures/${culture.image}" alt="${culture.name}" style="max-width:100%; border-radius:12px; margin-bottom:1rem;">` : ""}
+            
+            <button class="accordion-btn">History</button>
+            <div class="accordion-content">
+              <p>${culture.stories ? culture.stories.join("<br>") : "No history available."}</p>
+            </div>
+
+            <button class="accordion-btn">Etiquette</button>
+            <div class="accordion-content">
+              <ul>${culture.etiquette ? culture.etiquette.map(e => `<li>${e}</li>`).join("") : "<li>No etiquette info available.</li>"}</ul>
+            </div>
+
+            <button class="accordion-btn">Food</button>
+            <div class="accordion-content">
+              <p>${culture.foodHistory || "No food info available."}</p>
+            </div>
+
+            <button class="accordion-btn">Recipes</button>
+            <div class="accordion-content">
+              ${culture.recipes ? culture.recipes.map(r => `
+                <div class="recipe">
+                  <h4>${r.title}</h4>
+                  <p><strong>Ingredients:</strong> ${r.ingredients.join(", ")}</p>
+                  <p><strong>Steps:</strong> ${r.steps.join(" → ")}</p>
+                </div>
+              `).join("") : "<p>No recipes available.</p>"}
+            </div>
+
+            <button class="accordion-btn">Interesting Facts</button>
+            <div class="accordion-content">
+              <ul>${culture.facts ? culture.facts.map(f => `<li>${f}</li>`).join("") : "<li>No facts available.</li>"}</ul>
+            </div>
+          `;
+
+          // Accordion toggle logic
+          document.querySelectorAll(".accordion-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+              const content = btn.nextElementSibling;
+              content.style.display = content.style.display === "block" ? "none" : "block";
+            });
+          });
+        } else {
+          container.innerHTML = `<p>Culture not found. Please go back and try again.</p>`;
+        }
+      });
+  </script>
+</body>
+</html>

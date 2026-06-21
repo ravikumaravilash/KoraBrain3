@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Japanese Tea Ceremony",
+    "country": "Japan",
+    "category": ["Tradition", "East Asian"],
+    "etiquette": ["Bow before entering", "Handle utensils carefully"],
+    "stories": ["The tea ceremony reflects harmony, respect, purity, and tranquility."],
+    "foodHistory": "Matcha tea has been part of Japanese culture for centuries.",
+    "recipes": ["Matcha preparation", "Wagashi sweets"],
+    "facts": ["Tea ceremonies can last up to 4 hours."],
+    "imageUrl": "images/cultures/tea_ceremony.jpg"
+  },
+  {
+    "name": "Indian Namaste Greeting",
+    "country": "India",
+    "category": ["Etiquette", "South Asian"],
+    "etiquette": ["Join palms together", "Slight bow shows respect"],
+    "stories": ["Namaste means 'I bow to the divine in you'."],
+    "foodHistory": "Often accompanied by offering sweets during greetings.",
+    "recipes": ["Ladoo", "Jalebi"],
+    "facts": ["Namaste is also used in yoga worldwide."],
+    "imageUrl": "images/cultures/namaste.jpg"
+  },
+  {
+    "name": "Chinese Dragon Dance",
+    "country": "China",
+    "category": ["Festival", "East Asian"],
+    "etiquette": ["Respect performers", "Cheer loudly during the dance"],
+    "stories": ["The dragon symbolizes power, strength, and good luck."],
+    "foodHistory": "Often performed during Lunar New Year alongside festive foods.",
+    "recipes": ["Dumplings", "Spring rolls"],
+    "facts": ["Dragons can be over 100 meters long in parades."],
+    "imageUrl": "images/cultures/dragon_dance.jpg"
+  },
+  {
+    "name": "Mexican Day of the Dead",
+    "country": "Mexico",
+    "category": ["Festival", "Latin American"],
+    "etiquette": ["Respect altars", "Offer flowers and food"],
+    "stories": ["Families honor ancestors with altars and offerings."],
+    "foodHistory": "Pan de muerto is a traditional bread baked for the festival.",
+    "recipes": ["Pan de muerto", "Tamales"],
+    "facts": ["Celebrated on November 1st and 2nd."],
+    "imageUrl": "images/cultures/day_of_dead.jpg"
+  },
+  {
+    "name": "French Wine Tasting",
+    "country": "France",
+    "category": ["Food", "European"],
+    "etiquette": ["Swirl the glass", "Sip slowly"],
+    "stories": ["Wine is central to French culture and cuisine."],
+    "foodHistory": "France has centuries-old vineyards producing world-famous wines.",
+    "recipes": ["Coq au vin", "Cheese pairings"],
+    "facts": ["France produces over 7 billion bottles annually."],
+    "imageUrl": "images/cultures/wine_tasting.jpg"
+  },
+  {
+    "name": "Italian Pasta Tradition",
+    "country": "Italy",
+    "category": ["Food", "European"],
+    "etiquette": ["Never cut spaghetti", "Eat with fork only"],
+    "stories": ["Pasta is a symbol of Italian family meals."],
+    "foodHistory": "Pasta dates back to ancient Rome and beyond.",
+    "recipes": ["Spaghetti Carbonara", "Lasagna"],
+    "facts": ["Over 350 pasta shapes exist."],
+    "imageUrl": "images/cultures/pasta.jpg"
+  },
+  {
+    "name": "Brazilian Carnival",
+    "country": "Brazil",
+    "category": ["Festival", "Latin American"],
+    "etiquette": ["Dance freely", "Respect costumes"],
+    "stories": ["Carnival is a celebration before Lent with parades and samba."],
+    "foodHistory": "Street foods like feijoada and churrasco are popular during Carnival.",
+    "recipes": ["Feijoada", "Churrasco"],
+    "facts": ["Rio Carnival attracts millions of visitors yearly."],
+    "imageUrl": "images/cultures/carnival.jpg"
+  },
+  {
+    "name": "Egyptian Hieroglyphs",
+    "country": "Egypt",
+    "category": ["Tradition", "African"],
+    "etiquette": ["Respect ancient sites", "Do not touch carvings"],
+    "stories": ["Hieroglyphs were the sacred writing of ancient Egypt."],
+    "foodHistory": "Bread and beer were staples in ancient Egyptian diet.",
+    "recipes": ["Flatbread", "Lentil stew"],
+    "facts": ["Hieroglyphs combine logographic and alphabetic elements."],
+    "imageUrl": "images/cultures/hieroglyphs.jpg"
+  },
+  {
+    "name": "Greek Olympic Games",
+    "country": "Greece",
+    "category": ["Tradition", "European"],
+    "etiquette": ["Celebrate fair play", "Honor athletes"],
+    "stories": ["The Olympics began in Olympia in 776 BC."],
+    "foodHistory": "Ancient athletes ate figs, cheese, and bread.",
+    "recipes": ["Greek salad", "Moussaka"],
+    "facts": ["Only men competed in the ancient Olympics."],
+    "imageUrl": "images/cultures/olympics.jpg"
+  },
+  {
+    "name": "Thai Songkran Festival",
+    "country": "Thailand",
+    "category": ["Festival", "Asian"],
+    "etiquette": ["Splash water respectfully", "Honor elders"],
+    "stories": ["Songkran marks the Thai New Year with water fights."],
+    "foodHistory": "Mango sticky rice is a popular festive dish.",
+    "recipes": ["Mango sticky rice", "Pad Thai"],
+    "facts": ["Songkran lasts several days in mid-April."],
+    "imageUrl": "images/cultures/songkran.jpg"
+  }
+]

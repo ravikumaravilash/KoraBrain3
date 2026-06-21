@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Explore Cultures</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Explore Cultures</h1>
+  <div class="card-container" id="cultureCards"></div>
+
+  <script>
+    // Fetch cultures.json from the same folder
+    fetch("cultures.json")
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Failed to load cultures.json");
+        }
+        return response.json();
+      })
+      .then(data => {
+        const container = document.getElementById("cultureCards");
+        data.forEach(culture => {
+          const card = document.createElement("div");
+          card.className = "card";
+          card.innerHTML = `
+            <img src="${culture.imageUrl}" alt="${culture.name}">
+            <h3>${culture.name}</h3>
+            <a href="culture.html?name=${culture.name}" class="btn">Learn More</a>
+          `;
+          container.appendChild(card);
+        });
+      })
+      .catch(err => {
+        console.error("Error loading cultures:", err);
+        document.getElementById("cultureCards").innerHTML =
+          "<p style='color:red;text-align:center;'>Failed to load cultures data.</p>";
+      });
+  </script>
+</body>
+</html>
+<section class="chatbox-section">
+  <h2>Ask Copilot About Cultures</h2>
+  <div class="chatbox">
+    <div id="chatOutput"></div>
+    <input type="text" id="chatInput" placeholder="Ask about a culture...">
+    <button class="btn" onclick="sendMessage()">Send</button>
+  </div>
+</section>
+
+<script src="chat.js"></script>
+

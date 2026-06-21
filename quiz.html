@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KORA Quiz</title>
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; text-align: center; }
+    .question { margin: 2rem; font-size: 1.5rem; }
+    button { margin: 0.5rem; padding: 1rem 2rem; border: none; border-radius: 8px; cursor: pointer; font-size: 1.1rem; }
+    .correct { background: #4caf50; color: white; }
+    .wrong { background: #f44336; color: white; }
+    .feedback {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      font-size: 4rem;
+      color: white;
+      z-index: 999;
+    }
+    .feedback.correct { background: #4caf50; }
+    .feedback.wrong { background: #f44336; }
+  </style>
+</head>
+<body>
+  <h1>🎯 Culture Quiz</h1>
+  <div class="question">What is Diwali known as?</div>
+  <button class="correct" onclick="showFeedback(true)">Festival of Lights</button>
+  <button class="wrong" onclick="showFeedback(false)">Harvest Festival</button>
+
+  <div id="feedback" class="feedback"></div>SSSS
+<script>
+function showFeedback(isCorrect) {
+  const fb = document.getElementById("feedback");
+  if (isCorrect) {
+    fb.className = "feedback correct";
+    fb.innerText = "✔️ Correct!";
+    speak("Correct! Well done!");
+  } else {
+    fb.className = "feedback wrong";
+    fb.innerText = "❌ Wrong!";
+    speak("Oops, that’s not right. Try again!");
+  }
+  fb.style.display = "flex";
+  setTimeout(() => {
+    fb.style.display = "none";
+  }, 2000);
+}
+</script>
+
+</body>
+</html>

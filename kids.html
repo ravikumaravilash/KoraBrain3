@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KORA Kids Mode</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #4a90e2, #9013fe);
+      color: white;
+      margin: 0;
+      padding: 2rem;
+      text-align: center;
+    }
+    .character {
+      width: 150px;
+      height: 150px;
+      margin: 1rem auto;
+      background: url('images/kora-character.png') no-repeat center/contain;
+    }
+    .dialogue-box {
+      background: #fff;
+      color: #333;
+      border-radius: 20px;
+      padding: 1.5rem;
+      margin: 2rem auto;
+      max-width: 600px;
+      font-size: 1.2rem;
+      position: relative;
+    }
+    .dialogue-box::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 40px;
+      border-width: 20px 20px 0;
+      border-style: solid;
+      border-color: #fff transparent transparent transparent;
+    }
+    button {
+      background: #ffd700;
+      color: #333;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+    }
+    button:hover {
+      background: #ffb700;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Welcome to Kids Mode 🎉</h1>
+  <div class="character"></div>
+  <div class="dialogue-box" id="storyBox">Hello! I’m KORA, your cultural robot friend. Let’s explore Diwali together!</div>
+  <button onclick="nextStory()">Next ➡️</button>
+
+  <script>
+    const story = [
+      "Hello! I’m KORA, your cultural robot friend. Let’s explore Diwali together!",
+      "Diwali is called the Festival of Lights. Families decorate their homes with lamps.",
+      "People share sweets with neighbors and enjoy fireworks.",
+      "Now let’s see if you remember — time for a quiz!"
+    ];
+    let i = 0;
+
+    function speak(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      speechSynthesis.speak(utterance);
+    }
+
+    function nextStory() {
+      i++;
+      if (i < story.length) {
+        document.getElementById("storyBox").innerText = story[i];
+        speak(story[i]); // audio narration
+      } else {
+        window.location.href = 'quiz.html';
+      }
+    }
+
+    // Speak the first line on load
+    speak(story[0]);
+  </script>
+</body>
+</html>

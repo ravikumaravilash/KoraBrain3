@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Knee Massager Control</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="cultures.html">🌏 Explore Cultures</a></li>
+      <li><a href="robo.html">🤖 Robo Mode</a></li>
+      <li><a href="ayurveda.html">🌿 Ayurveda</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1>🦵 Knee Massager Control</h1>
+    <p>Operate your Ayurvedic knee massager directly from the webpage.</p>
+  </header>
+
+  <!-- Control Panel -->
+  <div class="container grid">
+    <div class="card">
+      <h3>Gentle Mode</h3>
+      <p>Low-speed continuous vibration for relaxation.</p>
+      <button onclick="sendCommand('gentle')">Activate Gentle Mode</button>
+    </div>
+
+    <div class="card">
+      <h3>Pulse Mode</h3>
+      <p>1 sec ON, 1 sec OFF pulses to improve circulation.</p>
+      <button onclick="sendCommand('pulse')">Activate Pulse Mode</button>
+    </div>
+
+    <div class="card">
+      <h3>Deep Mode</h3>
+      <p>Strong continuous vibration for muscle stiffness.</p>
+      <button onclick="sendCommand('deep')">Activate Deep Mode</button>
+    </div>
+  </div>
+
+  <!-- Status -->
+  <div class="container">
+    <p id="status">Status: Waiting for command...</p>
+  </div>
+
+  <!-- Script -->
+  <script>
+    function sendCommand(mode) {
+      // Replace with your ESP32 IP address
+      const esp32IP = "http://192.168.1.50"; 
+      fetch(`${esp32IP}/${mode}`)
+        .then(res => {
+          document.getElementById("status").innerText = "Status: " + mode + " mode activated!";
+        })
+        .catch(err => {
+          document.getElementById("status").innerText = "Error sending command.";
+          console.error(err);
+        });
+    }
+  </script>
+</body>
+</html>
