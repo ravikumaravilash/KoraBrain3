@@ -1,0 +1,196 @@
+/* ======================================
+   CULTURE EXPLORER
+====================================== */
+
+.culture-hero{
+
+min-height:70vh;
+
+background:
+linear-gradient(
+135deg,
+rgba(15,23,42,.85),
+rgba(20,83,45,.85)
+),
+url("images/culture-banner.jpg");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+color:white;
+
+padding:80px 20px;
+}
+
+.culture-hero h1{
+
+font-size:4.5rem;
+margin-bottom:20px;
+}
+
+.culture-hero p{
+
+max-width:800px;
+font-size:1.2rem;
+line-height:1.8;
+}
+
+/* SEARCH */
+
+.search-section{
+
+padding:60px 0;
+}
+
+.search-box{
+
+max-width:700px;
+margin:auto;
+}
+
+.search-box input{
+
+width:100%;
+
+padding:18px;
+
+border-radius:15px;
+
+border:none;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+font-size:1rem;
+}
+
+/* CULTURE GRID */
+
+.culture-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(350px,1fr));
+
+gap:35px;
+
+padding-bottom:80px;
+}
+
+.culture-card{
+
+background:white;
+
+border-radius:25px;
+
+overflow:hidden;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.4s;
+}
+
+.culture-card:hover{
+
+transform:translateY(-10px);
+}
+
+.culture-card img{
+
+width:100%;
+height:260px;
+object-fit:cover;
+}
+
+.culture-content{
+
+padding:25px;
+}
+
+.country{
+
+background:#14532d;
+
+display:inline-block;
+
+padding:8px 16px;
+
+border-radius:30px;
+
+color:white;
+
+font-size:.85rem;
+
+margin-bottom:15px;
+}
+
+.category{
+
+background:#D4AF37;
+
+padding:8px 16px;
+
+border-radius:30px;
+
+display:inline-block;
+
+margin-left:10px;
+
+font-size:.85rem;
+}
+
+.culture-content h3{
+
+margin-bottom:15px;
+
+color:#14532d;
+}
+
+.culture-content p{
+
+line-height:1.8;
+color:#475569;
+margin-bottom:15px;
+}
+
+.detail-box{
+
+margin-top:15px;
+
+padding:15px;
+
+background:#f8fafc;
+
+border-radius:15px;
+}
+
+.detail-box h4{
+
+margin-bottom:10px;
+
+color:#14532d;
+}
+
+/* FACTS */
+
+.fact{
+
+margin-bottom:8px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.culture-hero h1{
+
+font-size:3rem;
+}
+
+}

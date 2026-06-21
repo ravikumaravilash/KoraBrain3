@@ -1,17 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Ayurveda Learning</title>
-  <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>Ayurveda Hub</title>
+
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="css/chatbot.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/ayurveda.css">
+
 </head>
+
 <body>
-  <nav class="navbar"><ul><li><a href="index.html">🏠 Home</a></li></ul></nav>
-  <header class="hero"><h1>🌿 Ayurveda</h1><p>Learn plants, remedies, and wellness.</p></header>
-  <div class="container grid">
-    <div class="card"><h3>Tulsi</h3><p>Boosts immunity.</p></div>
-    <div class="card"><h3>Neem</h3><p>Good for skin health.</p></div>
-    <div class="card"><h3>Ashwagandha</h3><p>Reduces stress.</p></div>
-  </div>
+
+<nav class="navbar">
+
+<div class="logo">
+🌿 KORA
+</div>
+
+<ul class="nav-links">
+
+<li><a href="home.html">Home</a></li>
+
+<li><a href="cultures.html">Cultures</a></li>
+
+<li><a href="consult.html">Consultation</a></li>
+
+<li><a href="ask.html">Ask KORA</a></li>
+
+</ul>
+
+</nav>
+
+<section class="ayurveda-hero">
+
+<div>
+
+<h1>Ayurveda Wellness Hub</h1>
+
+<p>
+
+Explore ancient healing traditions powered
+by modern AI and wellness insights.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="symptom-section">
+
+<div class="container">
+
+<div class="symptom-box">
+
+<h2>AI Symptom Checker</h2>
+
+<p>
+Select a symptom and discover
+traditional Ayurvedic recommendations.
+</p>
+
+<select id="symptom">
+
+<option>Select Symptom</option>
+
+<option>Knee Pain</option>
+
+<option>Stress</option>
+
+<option>Poor Sleep</option>
+
+<option>Digestive Issues</option>
+
+</select>
+
+<br>
+
+<button onclick="checkSymptom()">
+
+Get Recommendations
+
+</button>
+
+<div id="result"
+class="result-box">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="dosha-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Understand Your Dosha</h2>
+
+<p>
+The foundation of Ayurveda.
+</p>
+
+</div>
+
+<div class="dosha-grid">
+
+<div class="dosha-card">
+
+<h3>🌬️ Vata</h3>
+
+<p>
+
+Associated with movement,
+creativity and energy.
+
+</p>
+
+</div>
+
+<div class="dosha-card">
+
+<h3>🔥 Pitta</h3>
+
+<p>
+
+Associated with digestion,
+focus and metabolism.
+
+</p>
+
+</div>
+
+<div class="dosha-card">
+
+<h3>🌊 Kapha</h3>
+
+<p>
+
+Associated with stability,
+strength and endurance.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="remedy-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Popular Remedies</h2>
+
+</div>
+
+<div class="remedy-grid">
+
+<div class="remedy-card">
+
+<div class="remedy-icon">🥛</div>
+
+<h3>Turmeric Milk</h3>
+
+<p>
+
+Supports immunity and
+reduces inflammation.
+
+</p>
+
+</div>
+
+<div class="remedy-card">
+
+<div class="remedy-icon">🌿</div>
+
+<h3>Ashwagandha</h3>
+
+<p>
+
+Traditionally used for
+stress management.
+
+</p>
+
+</div>
+
+<div class="remedy-card">
+
+<div class="remedy-icon">🍵</div>
+
+<h3>Herbal Tea</h3>
+
+<p>
+
+Promotes digestion and
+daily wellness.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="dashboard">
+
+<div class="container">
+
+<div class="dashboard-grid">
+
+<div class="dashboard-card">
+
+<h2>500+</h2>
+
+<p>Remedies</p>
+
+</div>
+
+<div class="dashboard-card">
+
+<h2>50+</h2>
+
+<p>Herbs</p>
+
+</div>
+
+<div class="dashboard-card">
+
+<h2>100+</h2>
+
+<p>Wellness Tips</p>
+
+</div>
+
+<div class="dashboard-card">
+
+<h2>24/7</h2>
+
+<p>AI Guidance</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="chat-toggle">
+🤖
+</div>
+
+<script src="js/ayurveda.js"></script>
+<script src="js/chatbot.js"></script>
+
 </body>
 </html>

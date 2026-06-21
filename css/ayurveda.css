@@ -1,0 +1,249 @@
+/* =====================================
+   AYURVEDA HUB
+===================================== */
+
+.ayurveda-hero{
+
+min-height:70vh;
+
+background:
+linear-gradient(
+135deg,
+rgba(20,83,45,.85),
+rgba(15,23,42,.85)
+),
+url("images/ayurveda-banner.jpg");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-align:center;
+
+color:white;
+
+padding:80px 20px;
+}
+
+.ayurveda-hero h1{
+
+font-size:4.5rem;
+
+margin-bottom:20px;
+}
+
+.ayurveda-hero p{
+
+font-size:1.2rem;
+
+max-width:800px;
+
+line-height:1.8;
+}
+
+/* SYMPTOM CHECKER */
+
+.symptom-section{
+
+padding:100px 0;
+}
+
+.symptom-box{
+
+background:white;
+
+padding:50px;
+
+border-radius:30px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+text-align:center;
+}
+
+.symptom-box h2{
+
+color:#14532d;
+
+margin-bottom:20px;
+}
+
+.symptom-box select{
+
+width:100%;
+
+max-width:500px;
+
+padding:15px;
+
+border-radius:15px;
+
+border:1px solid #ccc;
+
+margin-top:20px;
+}
+
+.symptom-box button{
+
+margin-top:25px;
+
+padding:15px 35px;
+
+background:#2E7D32;
+
+color:white;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+}
+
+.result-box{
+
+margin-top:30px;
+
+padding:25px;
+
+border-radius:15px;
+
+background:#f0fdf4;
+
+display:none;
+}
+
+/* DOSHA */
+
+.dosha-section{
+
+padding:100px 0;
+
+background:#f8fafc;
+}
+
+.dosha-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+}
+
+.dosha-card{
+
+background:white;
+
+padding:35px;
+
+border-radius:25px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.4s;
+}
+
+.dosha-card:hover{
+
+transform:translateY(-10px);
+}
+
+.dosha-card h3{
+
+color:#14532d;
+
+margin-bottom:15px;
+}
+
+/* REMEDIES */
+
+.remedy-section{
+
+padding:100px 0;
+}
+
+.remedy-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+}
+
+.remedy-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:25px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.4s;
+}
+
+.remedy-card:hover{
+
+transform:translateY(-10px);
+}
+
+.remedy-icon{
+
+font-size:3rem;
+
+margin-bottom:15px;
+}
+
+/* WELLNESS DASHBOARD */
+
+.dashboard{
+
+padding:100px 0;
+
+background:#14532d;
+
+color:white;
+}
+
+.dashboard-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+}
+
+.dashboard-card{
+
+text-align:center;
+
+padding:30px;
+}
+
+.dashboard-card h2{
+
+font-size:3rem;
+
+color:#D4AF37;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.ayurveda-hero h1{
+
+font-size:3rem;
+}
+
+}

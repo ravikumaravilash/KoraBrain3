@@ -1,153 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Culture Detail</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
 
-    .culture-header {
-      background: linear-gradient(135deg, #4a90e2, #9013fe);
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-    .accordion-btn {
-      background: #4a90e2;
-      color: white;
-      cursor: pointer;
-      padding: 1rem;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 1.1rem;
-      border-radius: 8px;
-      margin-top: 1rem;
-      transition: background 0.3s;
-    }
+<title>Culture Detail</title>
 
-    .accordion-btn:hover {
-      background: #357ab8;
-    }
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="css/culture.css">
 
-    .accordion-content {
-      display: none;
-      padding: 1rem;
-      background: #fff;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .recipe {
-      margin-bottom: 1rem;
-    }
-
-    .recipe h4 {
-      margin: 0.5rem 0;
-      color: #9013fe;
-    }
-
-    .back-btn {
-      background: #9013fe;
-      color: white;
-      border: none;
-      padding: 0.8rem 1.2rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
-      margin: 2rem auto;
-      display: block;
-    }
-
-    .back-btn:hover {
-      background: #6d0fbf;
-    }
-  </style>
 </head>
+
 <body>
-  <header class="culture-header">
-    <h1 id="culture-title">Culture Detail</h1>
-  </header>
 
-  <main style="padding:2rem;">
-    <div id="culture-detail"></div>
-  </main>
+<div id="culturePage">
 
-  <footer>
-    <button onclick="window.location.href='cultures.html'" class="back-btn">← Back to Explore Cultures</button>
-  </footer>
+</div>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const name = params.get("name");
+<script>
 
-    fetch("cultures.json")
-      .then(res => res.json())
-      .then(data => {
-        const culture = data.find(c => c.name.toLowerCase() === name.toLowerCase());
-        const container = document.getElementById("culture-detail");
-        const title = document.getElementById("culture-title");
+const params =
+new URLSearchParams(window.location.search);
 
-        if (culture) {
-          title.textContent = culture.name;
+const cultureName =
+params.get("name");
 
-          // Build accordion sections dynamically
-          container.innerHTML = `
-            ${culture.image ? `<img src="images/cultures/${culture.image}" alt="${culture.name}" style="max-width:100%; border-radius:12px; margin-bottom:1rem;">` : ""}
-            
-            <button class="accordion-btn">History</button>
-            <div class="accordion-content">
-              <p>${culture.stories ? culture.stories.join("<br>") : "No history available."}</p>
-            </div>
+fetch("cultures.json")
 
-            <button class="accordion-btn">Etiquette</button>
-            <div class="accordion-content">
-              <ul>${culture.etiquette ? culture.etiquette.map(e => `<li>${e}</li>`).join("") : "<li>No etiquette info available.</li>"}</ul>
-            </div>
+.then(res=>res.json())
 
-            <button class="accordion-btn">Food</button>
-            <div class="accordion-content">
-              <p>${culture.foodHistory || "No food info available."}</p>
-            </div>
+.then(data=>{
 
-            <button class="accordion-btn">Recipes</button>
-            <div class="accordion-content">
-              ${culture.recipes ? culture.recipes.map(r => `
-                <div class="recipe">
-                  <h4>${r.title}</h4>
-                  <p><strong>Ingredients:</strong> ${r.ingredients.join(", ")}</p>
-                  <p><strong>Steps:</strong> ${r.steps.join(" → ")}</p>
-                </div>
-              `).join("") : "<p>No recipes available.</p>"}
-            </div>
+const culture =
+data.find(c=>
 
-            <button class="accordion-btn">Interesting Facts</button>
-            <div class="accordion-content">
-              <ul>${culture.facts ? culture.facts.map(f => `<li>${f}</li>`).join("") : "<li>No facts available.</li>"}</ul>
-            </div>
-          `;
+c.name.toLowerCase() ===
+cultureName.toLowerCase()
 
-          // Accordion toggle logic
-          document.querySelectorAll(".accordion-btn").forEach(btn => {
-            btn.addEventListener("click", () => {
-              const content = btn.nextElementSibling;
-              content.style.display = content.style.display === "block" ? "none" : "block";
-            });
-          });
-        } else {
-          container.innerHTML = `<p>Culture not found. Please go back and try again.</p>`;
-        }
-      });
-  </script>
+);
+
+if(!culture){
+
+document.getElementById("culturePage")
+.innerHTML =
+"<h1>Culture Not Found</h1>";
+
+return;
+
+}
+
+document.getElementById("culturePage")
+.innerHTML =
+
+`
+
+<section
+class="culture-banner"
+
+style="
+background-image:
+url('${culture.imageUrl}');
+">
+
+<div class="banner-content">
+
+<span class="badge country-badge">
+
+${culture.country}
+
+</span>
+
+<span class="badge category-badge">
+
+${culture.category[0]}
+
+</span>
+
+<h1>
+
+${culture.name}
+
+</h1>
+
+<button
+class="speak-btn"
+onclick="speakCulture()">
+
+🔊 Listen with KORA
+
+</button>
+
+</div>
+
+</section>
+
+<section class="detail-section">
+
+<div class="container">
+
+<div class="detail-card">
+
+<h2>📖 Story</h2>
+
+<p>
+
+${culture.stories.join("<br><br>")}
+
+</p>
+
+</div>
+
+<div class="detail-card">
+
+<h2>🤝 Etiquette</h2>
+
+<ul>
+
+${culture.etiquette.map(
+
+e=>`<li>${e}</li>`
+
+).join("")}
+
+</ul>
+
+</div>
+
+<div class="detail-card">
+
+<h2>🍜 Food History</h2>
+
+<p>
+
+${culture.foodHistory}
+
+</p>
+
+</div>
+
+<div class="detail-card">
+
+<h2>🍲 Traditional Recipes</h2>
+
+<ul>
+
+${culture.recipes.map(
+
+r=>`<li>${r}</li>`
+
+).join("")}
+
+</ul>
+
+</div>
+
+<div class="detail-card">
+
+<h2>💡 Fun Facts</h2>
+
+<ul>
+
+${culture.facts.map(
+
+f=>`<li>${f}</li>`
+
+).join("")}
+
+</ul>
+
+</div>
+
+<div class="center">
+
+<a href="cultures.html"
+class="back-btn">
+
+← Back to Culture Explorer
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+`;
+
+window.currentCulture = culture;
+
+});
+
+function speakCulture(){
+
+const text =
+
+currentCulture.name +
+
+". " +
+
+currentCulture.stories.join(" ");
+
+const utterance =
+new SpeechSynthesisUtterance(text);
+
+speechSynthesis.speak(utterance);
+
+}
+
+</script>
+
 </body>
 </html>

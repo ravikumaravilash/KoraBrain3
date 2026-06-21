@@ -1,52 +1,229 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Explore Cultures</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>Explore Cultures</h1>
-  <div class="card-container" id="cultureCards"></div>
 
-  <script>
-    // Fetch cultures.json from the same folder
-    fetch("cultures.json")
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("Failed to load cultures.json");
-        }
-        return response.json();
-      })
-      .then(data => {
-        const container = document.getElementById("cultureCards");
-        data.forEach(culture => {
-          const card = document.createElement("div");
-          card.className = "card";
-          card.innerHTML = `
-            <img src="${culture.imageUrl}" alt="${culture.name}">
-            <h3>${culture.name}</h3>
-            <a href="culture.html?name=${culture.name}" class="btn">Learn More</a>
-          `;
-          container.appendChild(card);
-        });
-      })
-      .catch(err => {
-        console.error("Error loading cultures:", err);
-        document.getElementById("cultureCards").innerHTML =
-          "<p style='color:red;text-align:center;'>Failed to load cultures data.</p>";
-      });
-  </script>
-</body>
-</html>
-<section class="chatbox-section">
-  <h2>Ask Copilot About Cultures</h2>
-  <div class="chatbox">
-    <div id="chatOutput"></div>
-    <input type="text" id="chatInput" placeholder="Ask about a culture...">
-    <button class="btn" onclick="sendMessage()">Send</button>
-  </div>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KORA Culture Explorer</title>
+
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="css/chatbot.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/cultures.css">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">
+🌏 KORA
+</div>
+
+<ul class="nav-links">
+
+<li><a href="home.html">Home</a></li>
+
+<li><a href="ayurveda.html">Ayurveda</a></li>
+
+<li><a href="consult.html">Consultation</a></li>
+
+<li><a href="ask.html">Ask KORA</a></li>
+
+</ul>
+
+</nav>
+
+<section class="culture-hero">
+
+<div>
+
+<h1>Explore World Cultures</h1>
+
+<p>
+
+Discover traditions, festivals,
+foods, stories and customs
+from around the globe.
+
+</p>
+
+</div>
+
 </section>
 
-<script src="chat.js"></script>
+<section class="search-section">
 
+<div class="container">
+
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search by culture or country...">
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="culture-grid"
+id="cultureCards">
+
+</div>
+
+</div>
+
+</section>
+
+<div class="chat-toggle">
+🤖
+</div>
+
+<script>
+
+let allCultures = [];
+
+fetch("cultures.json")
+
+.then(response => response.json())
+
+.then(data => {
+
+allCultures = data;
+
+displayCultures(data);
+
+});
+
+function displayCultures(cultures){
+
+const container =
+document.getElementById("cultureCards");
+
+container.innerHTML = "";
+
+cultures.forEach(culture => {
+
+const card =
+document.createElement("div");
+
+card.className = "culture-card";
+
+card.innerHTML = `
+
+<img src="${culture.imageUrl}"
+alt="${culture.name}">
+
+<div class="culture-content">
+
+<span class="country">
+${culture.country}
+</span>
+
+<span class="category">
+${culture.category[0]}
+</span>
+
+<h3>
+${culture.name}
+</h3>
+
+<p>
+${culture.stories[0]}
+</p>
+
+<div class="detail-box">
+
+<h4>🍜 Food History</h4>
+
+<p>
+${culture.foodHistory}
+</p>
+
+</div>
+
+<div class="detail-box">
+
+<h4>🍲 Recipes</h4>
+
+<p>
+${culture.recipes.join(", ")}
+</p>
+
+</div>
+
+<div class="detail-box">
+
+<h4>💡 Fun Fact</h4>
+
+<p>
+${culture.facts[0]}
+</p>
+
+</div>
+
+<a
+href="culture.html?name=${encodeURIComponent(culture.name)}"
+class="btn"
+style="margin-top:15px;display:inline-block;">
+
+Learn More
+
+</a>
+
+</div>
+
+`;
+
+container.appendChild(card);
+
+});
+
+}
+
+document
+.getElementById("searchInput")
+
+.addEventListener("keyup",function(){
+
+const search =
+this.value.toLowerCase();
+
+const filtered =
+allCultures.filter(culture =>
+
+culture.name
+.toLowerCase()
+.includes(search)
+
+||
+
+culture.country
+.toLowerCase()
+.includes(search)
+
+);
+
+displayCultures(filtered);
+
+});
+
+</script>
+
+<script src="js/chatbot.js"></script>
+
+</body>
+</html>
+```

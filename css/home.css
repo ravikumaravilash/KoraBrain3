@@ -1,0 +1,316 @@
+/* ========================================
+   KORA HOME PAGE
+======================================== */
+
+.hero{
+
+min-height:85vh;
+
+background:
+linear-gradient(
+135deg,
+rgba(15,23,42,.85),
+rgba(20,83,45,.85)
+),
+url("images/home-bg.jpg");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-align:center;
+
+padding:80px 20px;
+
+color:white;
+}
+
+.hero-content{
+
+max-width:1000px;
+
+animation:fadeUp 1.2s ease;
+
+}
+
+.hero h1{
+
+font-size:5rem;
+
+font-weight:800;
+
+margin-bottom:20px;
+
+line-height:1.2;
+}
+
+.hero p{
+
+font-size:1.3rem;
+
+line-height:1.8;
+
+margin-bottom:35px;
+
+opacity:.95;
+}
+
+.hero-buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+}
+
+.hero-btn{
+
+padding:16px 32px;
+
+border-radius:14px;
+
+font-weight:600;
+
+text-decoration:none;
+
+transition:.3s;
+}
+
+.primary-btn{
+
+background:#D4AF37;
+
+color:#111827;
+}
+
+.secondary-btn{
+
+border:2px solid white;
+
+color:white;
+}
+
+.hero-btn:hover{
+
+transform:translateY(-5px);
+}
+
+/* FEATURES */
+
+.features{
+
+padding:100px 0;
+}
+
+.section-title{
+
+text-align:center;
+
+margin-bottom:60px;
+}
+
+.section-title h2{
+
+font-size:3rem;
+
+color:#14532d;
+}
+
+.section-title p{
+
+color:#64748b;
+
+margin-top:10px;
+}
+
+.feature-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+}
+
+.feature-card{
+
+background:white;
+
+padding:35px;
+
+border-radius:25px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.4s;
+
+text-decoration:none;
+
+color:#111827;
+}
+
+.feature-card:hover{
+
+transform:translateY(-10px);
+}
+
+.feature-icon{
+
+font-size:3rem;
+
+margin-bottom:20px;
+}
+
+.feature-card h3{
+
+margin-bottom:15px;
+
+font-size:1.4rem;
+}
+
+.feature-card p{
+
+line-height:1.8;
+
+color:#475569;
+}
+
+/* STATS */
+
+.stats{
+
+padding:100px 0;
+
+background:#14532d;
+
+color:white;
+}
+
+.stats-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+text-align:center;
+}
+
+.stat-card{
+
+padding:30px;
+}
+
+.stat-card h2{
+
+font-size:3rem;
+
+color:#D4AF37;
+}
+
+.stat-card p{
+
+margin-top:10px;
+}
+
+/* ABOUT */
+
+.about{
+
+padding:100px 0;
+}
+
+.about-box{
+
+background:white;
+
+padding:50px;
+
+border-radius:30px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+text-align:center;
+}
+
+.about-box h2{
+
+margin-bottom:25px;
+
+color:#14532d;
+}
+
+.about-box p{
+
+line-height:2;
+
+color:#475569;
+}
+
+/* FOOTER */
+
+.footer{
+
+background:#0f172a;
+
+color:white;
+
+padding:40px 20px;
+
+text-align:center;
+}
+
+.footer h3{
+
+margin-bottom:10px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:3rem;
+}
+
+.hero p{
+
+font-size:1rem;
+}
+
+.section-title h2{
+
+font-size:2rem;
+}
+
+}
