@@ -1,51 +1,23 @@
-function checkSymptom(){
+document.addEventListener("DOMContentLoaded", () => {
 
-const symptom =
-document.getElementById("symptom").value;
+  // Smooth fade-in animation on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
 
-const result =
-document.getElementById("result");
+  const elements = document.querySelectorAll(
+    ".card, .plant-card, .dosha-card, .preserve-card"
+  );
 
-let text = "";
+  elements.forEach(el => {
+    el.classList.add("hidden");
+    observer.observe(el);
+  });
 
-switch(symptom){
-
-case "Knee Pain":
-
-text =
-"Recommended: Turmeric Milk, Mahanarayan Oil, Gentle Yoga.";
-
-break;
-
-case "Stress":
-
-text =
-"Recommended: Ashwagandha, Meditation, Herbal Tea.";
-
-break;
-
-case "Poor Sleep":
-
-text =
-"Recommended: Warm Milk, Brahmi, Relaxation Therapy.";
-
-break;
-
-case "Digestive Issues":
-
-text =
-"Recommended: Ginger Tea, Triphala, Balanced Diet.";
-
-break;
-
-default:
-
-text =
-"Please select a symptom.";
-
-}
-
-result.style.display = "block";
-
-result.innerHTML = text;
-}
+});
