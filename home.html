@@ -167,6 +167,77 @@ Your intelligent AI companion.
 </div>
 
 </section>
+<section class="stats-section">
+
+<div class="container">
+
+<div class="stats-grid">
+
+<div class="stats-box">
+<h2 class="counter" data-target="50">0</h2>
+<p>Global Cultures</p>
+</div>
+
+<div class="stats-box">
+<h2 class="counter" data-target="500">0</h2>
+<p>Ayurvedic Remedies</p>
+</div>
+
+<div class="stats-box">
+<h2 class="counter" data-target="4">0</h2>
+<p>Medical Specialists</p>
+</div>
+
+<div class="stats-box">
+<h2 class="counter" data-target="1000">0</h2>
+<p>AI Interactions</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+const counters =
+document.querySelectorAll(".counter");
+
+counters.forEach(counter=>{
+
+const updateCounter=()=>{
+
+const target=
++counter.getAttribute("data-target");
+
+const current=
++counter.innerText;
+
+const increment=
+target/100;
+
+if(current<target){
+
+counter.innerText=
+Math.ceil(current+increment);
+
+setTimeout(updateCounter,20);
+
+}else{
+
+counter.innerText=target;
+
+}
+
+};
+
+updateCounter();
+
+});
+
+</script>
+
 
 <section class="stats">
 
