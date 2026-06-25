@@ -1,0 +1,81 @@
+.oil-hero{
+
+height:45vh;
+
+background:
+linear-gradient(
+135deg,
+#14532d,
+#22c55e
+);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+color:white;
+}
+
+.oil-hero h1{
+
+font-size:4rem;
+}
+
+.oil-container{
+
+max-width:1000px;
+margin:60px auto;
+}
+
+.oil-card{
+
+background:white;
+
+padding:40px;
+
+border-radius:25px;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
+}
+
+.oil-card select{
+
+width:100%;
+
+padding:15px;
+
+margin:15px 0;
+
+border-radius:12px;
+
+border:1px solid #ddd;
+}
+
+.oil-btn{
+
+background:#14532d;
+
+color:white;
+
+border:none;
+
+padding:15px 30px;
+
+border-radius:12px;
+
+cursor:pointer;
+}
+
+.result-box{
+
+margin-top:25px;
+
+padding:25px;
+
+background:#f8fafc;
+
+border-radius:15px;
+}
