@@ -1,5 +1,5 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -11,8 +11,6 @@
 
 <link rel="stylesheet" href="css/global.css">
 <link rel="stylesheet" href="css/navbar.css">
-<link rel="stylesheet" href="css/chatbot.css">
-<link rel="stylesheet" href="css/animations.css">
 <link rel="stylesheet" href="css/cultures.css">
 
 </head>
@@ -26,15 +24,11 @@
 </div>
 
 <ul class="nav-links">
-
 <li><a href="home.html">Home</a></li>
-
+<li><a href="cultures.html">Cultures</a></li>
 <li><a href="ayurveda.html">Ayurveda</a></li>
-
 <li><a href="consult.html">Consultation</a></li>
-
 <li><a href="ask.html">Ask KORA</a></li>
-
 </ul>
 
 </nav>
@@ -46,11 +40,8 @@
 <h1>Explore World Cultures</h1>
 
 <p>
-
-Discover traditions, festivals,
-foods, stories and customs
-from around the globe.
-
+Discover traditions, etiquette, festivals, food histories,
+recipes, and fascinating facts from around the world.
 </p>
 
 </div>
@@ -66,7 +57,7 @@ from around the globe.
 <input
 type="text"
 id="searchInput"
-placeholder="Search by culture or country...">
+placeholder="Search cultures or countries...">
 
 </div>
 
@@ -78,7 +69,8 @@ placeholder="Search by culture or country...">
 
 <div class="container">
 
-<div class="culture-grid"
+<div
+class="culture-grid"
 id="cultureCards">
 
 </div>
@@ -87,17 +79,25 @@ id="cultureCards">
 
 </section>
 
-<div class="chat-toggle">
-🤖
-</div>
-
 <script>
 
 let allCultures = [];
 
 fetch("cultures.json")
 
-.then(response => response.json())
+.then(response => {
+
+if(!response.ok){
+
+throw new Error(
+"Unable to load cultures.json"
+);
+
+}
+
+return response.json();
+
+})
 
 .then(data => {
 
@@ -105,12 +105,26 @@ allCultures = data;
 
 displayCultures(data);
 
+})
+
+.catch(error => {
+
+document.getElementById(
+"cultureCards"
+).innerHTML =
+
+"<h2 style='text-align:center;'>Failed to load cultures.</h2>";
+
+console.error(error);
+
 });
 
 function displayCultures(cultures){
 
 const container =
-document.getElementById("cultureCards");
+document.getElementById(
+"cultureCards"
+);
 
 container.innerHTML = "";
 
@@ -119,11 +133,14 @@ cultures.forEach(culture => {
 const card =
 document.createElement("div");
 
-card.className = "culture-card";
+card.className =
+"culture-card";
 
-card.innerHTML = `
+card.innerHTML =
 
-<img src="${culture.imageUrl}"
+`
+<img
+src="${culture.imageUrl}"
 alt="${culture.name}">
 
 <div class="culture-content">
@@ -146,7 +163,7 @@ ${culture.stories[0]}
 
 <div class="detail-box">
 
-<h4>🍜 Food History</h4>
+<h4>🍽 Food History</h4>
 
 <p>
 ${culture.foodHistory}
@@ -156,7 +173,7 @@ ${culture.foodHistory}
 
 <div class="detail-box">
 
-<h4>🍲 Recipes</h4>
+<h4>📖 Recipes</h4>
 
 <p>
 ${culture.recipes.join(", ")}
@@ -166,7 +183,7 @@ ${culture.recipes.join(", ")}
 
 <div class="detail-box">
 
-<h4>💡 Fun Fact</h4>
+<h4>💡 Interesting Fact</h4>
 
 <p>
 ${culture.facts[0]}
@@ -176,8 +193,7 @@ ${culture.facts[0]}
 
 <a
 href="culture.html?name=${encodeURIComponent(culture.name)}"
-class="btn"
-style="margin-top:15px;display:inline-block;">
+class="btn">
 
 Learn More
 
@@ -195,8 +211,7 @@ container.appendChild(card);
 
 document
 .getElementById("searchInput")
-
-.addEventListener("keyup",function(){
+.addEventListener("input", function(){
 
 const search =
 this.value.toLowerCase();
@@ -222,8 +237,6 @@ displayCultures(filtered);
 
 </script>
 
-<script src="js/chatbot.js"></script>
-
 </body>
+
 </html>
-```
