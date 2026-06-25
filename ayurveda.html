@@ -4,158 +4,74 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width,initial-scale=1.0">
-
-<title>Ayurveda Hub</title>
+<title>KORA Ayurveda</title>
 
 <link rel="stylesheet" href="css/global.css">
 <link rel="stylesheet" href="css/navbar.css">
-<link rel="stylesheet" href="css/chatbot.css">
-<link rel="stylesheet" href="css/animations.css">
 <link rel="stylesheet" href="css/ayurveda.css">
 
 </head>
 
 <body>
 
-<nav class="navbar">
+<!-- NAVBAR HERE -->
 
-<div class="logo">
-🌿 KORA
-</div>
+<section class="hero">
 
-<ul class="nav-links">
+<div class="hero-content">
 
-<li><a href="home.html">Home</a></li>
-
-<li><a href="cultures.html">Cultures</a></li>
-
-<li><a href="consult.html">Consultation</a></li>
-
-<li><a href="ask.html">Ask KORA</a></li>
-
-</ul>
-
-</nav>
-
-<section class="ayurveda-hero">
-
-<div>
-
-<h1>Ayurveda Wellness Hub</h1>
+<h1>Ayurveda</h1>
 
 <p>
-
-Explore ancient healing traditions powered
-by modern AI and wellness insights.
-
+A 5,000-year-old system of natural healing,
+preserved through education, culture,
+and artificial intelligence.
 </p>
 
 </div>
 
 </section>
 
-<section class="symptom-section">
+<section class="history">
 
 <div class="container">
 
-<div class="symptom-box">
-
-<h2>AI Symptom Checker</h2>
+<h2>The Origin of Ayurveda</h2>
 
 <p>
-Select a symptom and discover
-traditional Ayurvedic recommendations.
+Ayurveda originated in ancient India and is one
+of the world's oldest holistic healthcare systems.
+Its principles are documented in texts such as
+the Charaka Samhita and Sushruta Samhita.
 </p>
-
-<select id="symptom">
-
-<option>Select Symptom</option>
-
-<option>Knee Pain</option>
-
-<option>Stress</option>
-
-<option>Poor Sleep</option>
-
-<option>Digestive Issues</option>
-
-</select>
-
-<br>
-
-<button onclick="checkSymptom()">
-
-Get Recommendations
-
-</button>
-
-<div id="result"
-class="result-box">
-
-</div>
-
-</div>
 
 </div>
 
 </section>
 
-<section class="dosha-section">
+<section class="doshas">
 
 <div class="container">
 
-<div class="section-title">
-
-<h2>Understand Your Dosha</h2>
-
-<p>
-The foundation of Ayurveda.
-</p>
-
-</div>
+<h2>The Three Doshas</h2>
 
 <div class="dosha-grid">
 
 <div class="dosha-card">
-
-<h3>🌬️ Vata</h3>
-
-<p>
-
-Associated with movement,
-creativity and energy.
-
-</p>
-
+<h3>Vata</h3>
+<p>Air and Space. Governs movement and creativity.</p>
 </div>
 
 <div class="dosha-card">
-
-<h3>🔥 Pitta</h3>
-
-<p>
-
-Associated with digestion,
-focus and metabolism.
-
-</p>
-
+<h3>Pitta</h3>
+<p>Fire and Water. Governs digestion and metabolism.</p>
 </div>
 
 <div class="dosha-card">
-
-<h3>🌊 Kapha</h3>
-
-<p>
-
-Associated with stability,
-strength and endurance.
-
-</p>
-
+<h3>Kapha</h3>
+<p>Earth and Water. Governs stability and strength.</p>
 </div>
 
 </div>
@@ -164,61 +80,42 @@ strength and endurance.
 
 </section>
 
-<section class="remedy-section">
+<section class="plants">
 
 <div class="container">
 
-<div class="section-title">
+<h2>Medicinal Plants</h2>
 
-<h2>Popular Remedies</h2>
+<div class="plant-grid">
 
+<div class="plant-card">
+<img src="images/tulsi.jpg">
+<h3>Tulsi</h3>
+<p>Known as the Queen of Herbs and used for immunity support.</p>
 </div>
 
-<div class="remedy-grid">
-
-<div class="remedy-card">
-
-<div class="remedy-icon">🥛</div>
-
-<h3>Turmeric Milk</h3>
-
-<p>
-
-Supports immunity and
-reduces inflammation.
-
-</p>
-
-</div>
-
-<div class="remedy-card">
-
-<div class="remedy-icon">🌿</div>
-
+<div class="plant-card">
+<img src="images/ashwagandha.jpg">
 <h3>Ashwagandha</h3>
-
-<p>
-
-Traditionally used for
-stress management.
-
-</p>
-
+<p>Used for stress management and vitality.</p>
 </div>
 
-<div class="remedy-card">
+<div class="plant-card">
+<img src="images/neem.jpg">
+<h3>Neem</h3>
+<p>Traditional plant for skin and oral health.</p>
+</div>
 
-<div class="remedy-icon">🍵</div>
+<div class="plant-card">
+<img src="images/aloe.jpg">
+<h3>Aloe Vera</h3>
+<p>Known for soothing and healing properties.</p>
+</div>
 
-<h3>Herbal Tea</h3>
-
-<p>
-
-Promotes digestion and
-daily wellness.
-
-</p>
-
+<div class="plant-card">
+<img src="images/turmeric.jpg">
+<h3>Turmeric</h3>
+<p>Ancient anti-inflammatory golden spice.</p>
 </div>
 
 </div>
@@ -227,42 +124,27 @@ daily wellness.
 
 </section>
 
-<section class="dashboard">
+<section class="preservation">
 
 <div class="container">
 
-<div class="dashboard-grid">
+<h2>How KORA Preserves Ayurveda</h2>
 
-<div class="dashboard-card">
+<div class="preserve-grid">
 
-<h2>500+</h2>
-
-<p>Remedies</p>
-
+<div class="preserve-card">
+<h3>Digital Preservation</h3>
+<p>Documenting traditional knowledge for future generations.</p>
 </div>
 
-<div class="dashboard-card">
-
-<h2>50+</h2>
-
-<p>Herbs</p>
-
+<div class="preserve-card">
+<h3>AI Education</h3>
+<p>Making Ayurvedic learning interactive and accessible.</p>
 </div>
 
-<div class="dashboard-card">
-
-<h2>100+</h2>
-
-<p>Wellness Tips</p>
-
-</div>
-
-<div class="dashboard-card">
-
-<h2>24/7</h2>
-
-<p>AI Guidance</p>
-
+<div class="preserve-card">
+<h3>Cultural Awareness</h3>
+<p>Helping communities appreciate traditional healthcare wisdom.</p>
 </div>
 
 </div>
@@ -270,13 +152,6 @@ daily wellness.
 </div>
 
 </section>
-
-<div class="chat-toggle">
-🤖
-</div>
-
-<script src="js/ayurveda.js"></script>
-<script src="js/chatbot.js"></script>
 
 </body>
 </html>

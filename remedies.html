@@ -1,90 +1,178 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-<title>KORA Home Remedies</title>
+<meta charset="UTF-8">
 
-<link rel="stylesheet"
-href="css/global.css">
+<title>KORA Remedy Library</title>
 
-<link rel="stylesheet"
-href="css/navbar.css">
-
-<link rel="stylesheet"
-href="css/remedies.css">
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="css/remedies.css">
 
 </head>
 
 <body>
 
+<!-- NAVBAR HERE -->
+
 <section class="remedy-hero">
 
-<div>
-
-<h1>💡 Home Remedies</h1>
+<h1>Remedy Library</h1>
 
 <p>
-
-Traditional Wellness Knowledge
-
+AI-assisted wellness recommendations inspired by traditional knowledge.
 </p>
+
+</section>
+
+<section class="symptom-checker">
+
+<div class="container">
+
+<h2>Symptom Checker</h2>
+
+<input
+type="text"
+id="symptomInput"
+placeholder="Enter symptom (headache, cold, stress...)">
+
+<button onclick="checkSymptom()">
+Find Remedies
+</button>
+
+<div id="results"></div>
 
 </div>
 
 </section>
 
-<section class="remedy-grid">
+<section class="oil-section">
 
-<div class="remedy-card">
+<div class="container">
 
-<h2>🍯 Honey & Ginger</h2>
+<h2>Oil Recommendation</h2>
 
-<p>
+<select id="oilProblem">
 
-Traditionally used in many households for soothing routines.
+<option>Joint Pain</option>
+<option>Stress</option>
+<option>Muscle Fatigue</option>
 
-</p>
+</select>
 
-</div>
+<button onclick="recommendOil()">
 
-<div class="remedy-card">
+Recommend Oil
 
-<h2>🥛 Turmeric Milk</h2>
+</button>
 
-<p>
-
-A popular traditional wellness drink in India.
-
-</p>
-
-</div>
-
-<div class="remedy-card">
-
-<h2>🍵 Herbal Tea</h2>
-
-<p>
-
-Often enjoyed for relaxation and comfort.
-
-</p>
-
-</div>
-
-<div class="remedy-card">
-
-<h2>🌿 Tulsi</h2>
-
-<p>
-
-One of the most respected herbs in Ayurveda.
-
-</p>
+<div id="oilResult"></div>
 
 </div>
 
 </section>
+
+<section class="library">
+
+<div class="container">
+
+<h2>Popular Remedies</h2>
+
+<div class="remedy-grid">
+
+<div class="remedy-card">
+<h3>Turmeric Milk</h3>
+<p>Supports immunity and soothing comfort.</p>
+</div>
+
+<div class="remedy-card">
+<h3>Ginger Tea</h3>
+<p>Traditionally used for digestion and warmth.</p>
+</div>
+
+<div class="remedy-card">
+<h3>Tulsi Infusion</h3>
+<p>Popular herbal wellness beverage.</p>
+</div>
+
+<div class="remedy-card">
+<h3>Aloe Vera</h3>
+<p>Traditionally used for skin support.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+function checkSymptom(){
+
+const symptom =
+document.getElementById("symptomInput")
+.value
+.toLowerCase();
+
+let result = "";
+
+if(symptom.includes("cold")){
+
+result =
+"Ginger Tea • Tulsi Infusion • Steam Inhalation";
+
+}
+else if(symptom.includes("stress")){
+
+result =
+"Ashwagandha • Meditation • Warm Oil Massage";
+
+}
+else{
+
+result =
+"Consult a healthcare professional.";
+
+}
+
+document.getElementById("results")
+.innerHTML = result;
+
+}
+
+function recommendOil(){
+
+const value =
+document.getElementById("oilProblem")
+.value;
+
+let oil = "";
+
+if(value==="Joint Pain"){
+
+oil = "Sesame Oil";
+
+}
+else if(value==="Stress"){
+
+oil = "Lavender Oil";
+
+}
+else{
+
+oil = "Eucalyptus Oil";
+
+}
+
+document.getElementById("oilResult")
+.innerHTML = oil;
+
+}
+
+</script>
 
 </body>
 </html>
