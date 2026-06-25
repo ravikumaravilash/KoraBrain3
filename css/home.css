@@ -1,7 +1,9 @@
 /* ==========================
    KORA HOME PAGE
 ========================== */
-
+body{
+    background:red !important;
+}
 .hero{
 
 min-height:100vh;
